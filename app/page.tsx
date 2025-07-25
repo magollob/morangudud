@@ -151,19 +151,7 @@ export default function MorangoDoAmorSales() {
       </div>
 
       {/* Brand Header */}
-      <div className="bg-white/90 backdrop-blur-sm border-b border-pink-200">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-center">
-            <Image
-              src="/images/chocolicias-da-fabi-logo.png"
-              alt="Chocolícias da Fabi - Receitas Exclusivas"
-              width={60}
-              height={60}
-              className="rounded-full"
-            />
-          </div>
-        </div>
-      </div>
+      
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-8 md:py-16">
