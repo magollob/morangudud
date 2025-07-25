@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Heart, Star, TrendingUp, Download, Shield, Headphones, Gift, Clock } from "lucide-react"
+import { CheckCircle, Heart, Star, TrendingUp, Download, Gift, Clock } from "lucide-react"
 import Image from "next/image"
 
 const names = [
@@ -150,63 +150,77 @@ export default function MorangoDoAmorSales() {
         </p>
       </div>
 
+      {/* Brand Header */}
+      <div className="bg-white/90 backdrop-blur-sm border-b border-pink-200">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-center">
+            <Image
+              src="/images/chocolicias-da-fabi-logo.png"
+              alt="Chocolícias da Fabi - Receitas Exclusivas"
+              width={60}
+              height={60}
+              className="rounded-full"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-20">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent mb-6">
-            Aprenda a Nova Receita do Momento:
-          </h1>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Morango do Amor Perfeito 🍓❤️</h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Descubra o segredo por trás do doce que conquistou as redes sociais – receita exclusiva, fácil e lucrativa!
-          </p>
+      <section className="container mx-auto px-4 py-8 md:py-16">
+        {/* Mobile-optimized header */}
+        <div className="text-center mb-8 md:mb-12">
+          <div className="space-y-4 md:space-y-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
+              <span className="block bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
+                Aprenda a Nova Receita
+              </span>
+              <span className="block bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
+                do Momento:
+              </span>
+            </h1>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+              <span className="block">Morango do Amor</span>
+              <span className="block">Perfeito 🍓❤️</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
+              Descubra o segredo por trás do doce que conquistou as redes sociais – receita exclusiva, fácil e
+              lucrativa!
+            </p>
+          </div>
         </div>
 
-        {/* Centralized Value Section */}
-        <div className="max-w-2xl mx-auto">
-          <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl">
-            <CardContent className="p-4">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/c8ed7a87-cc63-4e03-94c4-47d0d75d7833-scaled%20%281%29.jpg-pVMO25t6T7eOLCOSVQ2YUBypbAqv3E.jpeg"
-                alt="Morango do Amor Perfeito em embalagem individual"
-                width={600}
-                height={800}
-                className="rounded-lg object-cover w-full h-auto"
-              />
-            </CardContent>
-          </Card>
+        {/* Video and Info Section */}
+        <div className="max-w-4xl mx-auto">
+          {/* Video Container */}
+          <div className="relative mb-6">
+            <Card className="bg-white/70 backdrop-blur-sm border-0 shadow-xl overflow-hidden">
+              <CardContent className="p-2 sm:p-4">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" /* 16:9 Aspect Ratio */ }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                    src="https://www.youtube.com/embed/qNiILv6Q4a8?si=lov1U1uhHubj_y4G"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </CardContent>
+            </Card>
 
-          <div className="grid grid-cols-2 gap-4 mt-8">
-            <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-4 text-center">
-                <Download className="w-8 h-8 text-red-500 mx-auto mb-2" />
-                <p className="text-sm font-medium">Acesso imediato após o pagamento</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-4 text-center">
-                <Shield className="w-8 h-8 text-red-500 mx-auto mb-2" />
-                <p className="text-sm font-medium">Garantia de 7 dias ou seu dinheiro de volta</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-4 text-center">
-                <Headphones className="w-8 h-8 text-red-500 mx-auto mb-2" />
-                <p className="text-sm font-medium">Suporte prioritário por WhatsApp</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-4 text-center">
-                <Gift className="w-8 h-8 text-red-500 mx-auto mb-2" />
-                <p className="text-sm font-medium">Um super brinde surpresa </p>
-              </CardContent>
-            </Card>
+            {/* Logo positioned below video - make it more prominent */}
+            
           </div>
+
+          {/* Benefits Grid - Mobile Optimized */}
+
+          {/* Mobile CTA Button */}
         </div>
       </section>
 
-      {/* NEW: Mini Course Preview Section - Now as separate section */}
-      <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+      {/* NEW: Mini Course Preview Section */}
+      <section className="py-8 bg-gradient-to-r from-purple-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -580,230 +594,196 @@ export default function MorangoDoAmorSales() {
             </Card>
           </div>
 
-          {/* Terceira linha - 3 depoimentos */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-0">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/feedback3-4iN2VefHBGd40ZvIreYlEWLNKHYZUQ.png"
-                  alt="Depoimento Carla M."
-                  width={400}
-                  height={300}
-                  className="w-full rounded-lg"
-                />
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-0">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/feedback253-ADU7jaiiprgyiOnsFPHsmM9UsaAWFd.png"
-                  alt="Depoimento Ana Paula S."
-                  width={400}
-                  height={300}
-                  className="w-full rounded-lg"
-                />
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* NEW: Exclusive Bonus Section */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-teal-50">
-        <div className="container mx-auto px-4 text-center">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              🎁 BÔNUS EXCLUSIVO: Mini Curso Brigadeiro Gourmet Perfeito!
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Como um presente especial, você terá acesso ao nosso mini curso completo de Brigadeiro Gourmet, para
-              diversificar seus produtos e aumentar ainda mais seus lucros!
-            </p>
-          </div>
-          <div className="max-w-md mx-auto mb-8">
-            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-4">
-                <Image
-                  src="/images/brigadeiros-gourmet-bonus.png"
-                  alt="Mini Curso Brigadeiro Gourmet Perfeito - Caixa com brigadeiros gourmet"
-                  width={400}
-                  height={500}
-                  className="rounded-lg object-cover w-full h-auto"
-                />
-              </CardContent>
-            </Card>
-          </div>
-          <Button
-            className="w-full max-w-xs bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 text-lg rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
-            onClick={() => window.open("https://pay.kiwify.com.br/CI9Z3I6", "_blank")} // Replace with actual bonus link if different
-          >
-            🎉 QUERO MEU BÔNUS AGORA! 🎉
-          </Button>
-          <p className="text-sm text-gray-500 mt-4">
-            Este bônus é liberado automaticamente após a compra do Morango do Amor.
-          </p>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-red-600 to-pink-600">
-        <div className="container mx-auto px-4 text-center">
-          <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-2xl max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">🔒 100% Seguro & Garantido</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Se você não ficar satisfeita com o curso em até 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas,
-                sem complicações.
-              </p>
-
-              <div className="mb-8">
-                <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 mb-4">
-                  <p className="text-lg text-red-600 font-extrabold mb-2">⚠️ VALOR SUBIU DE R$ 9,90 PARA R$ 14,90!</p>
-                  <p className="text-sm text-gray-600 mb-3">O preço subirá novamente em:</p>
-                  <CountdownTimer />
-                </div>
-                <div className="flex flex-col items-center justify-center gap-2 mb-4">
-                  <span className="text-2xl text-gray-500 line-through">De R$ 47,90</span>
-                  <span className="text-5xl md:text-6xl font-bold text-yellow-500">R$ 14,90</span>
-                  <span className="text-lg text-gray-700 font-semibold">ou em até 3x de R$5,32 💳</span>
-                </div>
-                <Badge className="bg-red-600 text-white px-4 py-2 text-lg">69% de desconto</Badge>
+          {/* NEW: Exclusive Bonus Section */}
+          <section className="py-16 bg-gradient-to-r from-green-50 to-teal-50">
+            <div className="container mx-auto px-4 text-center">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  🎁 BÔNUS: Mini Curso Brigadeiro Gourmet!
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Ganhe acesso ao nosso mini curso completo de Brigadeiro Gourmet para diversificar e lucrar ainda mais!
+                </p>
               </div>
-
+              <div className="max-w-md mx-auto mb-8">
+                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
+                  <CardContent className="p-4">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/brigadeiros-gourmet-Yqzbzq8C11lxE092M8O6uX5XtbNm9t.png"
+                      alt="Curso Online de Brigadeiros Gourmet - Caixa elegante com brigadeiros gourmet variados"
+                      width={400}
+                      height={500}
+                      className="rounded-lg object-cover w-full h-auto"
+                    />
+                  </CardContent>
+                </Card>
+              </div>
               <Button
-                className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-6 text-xl rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 mb-4"
-                onClick={() => window.open("https://pay.kiwify.com.br/CI9Z3I6", "_blank")}
+                className="w-full max-w-xs bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 text-lg rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
+                onClick={() => window.open("https://pay.kiwify.com.br/CI9Z3I6", "_blank")} // Replace with actual bonus link if different
               >
-                🏆 QUERO APRENDER AGORA! 🏆
+                🎉 QUERO MEU BÔNUS AGORA! 🎉
               </Button>
-
-              <p className="text-sm text-gray-500">⏰ Oferta válida apenas hoje! Restam apenas 23 vagas.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* FAQ Section - Now as last section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-red-100 rounded-full opacity-20 blur-xl"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-pink-100 rounded-full opacity-20 blur-xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-orange-50 rounded-full opacity-30 blur-2xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Header Section */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full mb-6">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <p className="text-sm text-gray-500 mt-4">
+                Este bônus é liberado automaticamente após a compra do Morango do Amor.
+              </p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
-              Dúvidas Frequentes
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Esclarecemos as principais dúvidas sobre o tutorial do Morango do Amor para que você possa tomar a melhor
-              decisão
-            </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mt-6 rounded-full"></div>
-          </div>
+          </section>
 
-          {/* FAQ Grid */}
-          <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-6">
-              {/* Left Column */}
-              <div className="space-y-4">
-                <FAQItem
-                  icon="🍓"
-                  question="É realmente fácil de fazer?"
-                  answer="Sim! O tutorial foi desenvolvido especialmente para iniciantes. Com ingredientes simples que você encontra em qualquer supermercado e um passo a passo detalhado com fotos, qualquer pessoa consegue fazer em casa, mesmo sem experiência na cozinha. Nossas alunas conseguem fazer na primeira tentativa!"
-                />
+          {/* Final CTA Section */}
+          <section className="py-16 bg-gradient-to-r from-red-600 to-pink-600">
+            <div className="container mx-auto px-4 text-center">
+              <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-2xl max-w-2xl mx-auto">
+                <CardContent className="p-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">🔒 100% Seguro & Garantido</h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Se você não ficar satisfeita com o curso em até 7 dias, devolvemos 100% do seu dinheiro. Sem
+                    perguntas, sem complicações.
+                  </p>
 
-                <FAQItem
-                  icon="💰"
-                  question="Quanto posso ganhar vendendo?"
-                  answer="O lucro varia conforme sua dedicação e região. Nossas alunas relatam ganhos de R$ 400 a R$ 3.000 por mês. Cada morango do amor pode ser vendido entre R$ 3,00 a R$ 8,00, com custo de produção muito baixo (cerca de R$ 0,80 por unidade). Com dedicação, é possível ter uma renda extra significativa!"
-                />
+                  <div className="mb-8">
+                    <div className="flex flex-col items-center justify-center gap-2 mb-4">
+                      <span className="text-2xl text-gray-500 line-through">De R$ 47,90</span>
+                      <span className="text-5xl md:text-6xl font-bold text-yellow-500">R$ 14,90</span>
+                      <span className="text-lg text-gray-700 font-semibold">ou em até 3x de R$5,32 💳</span>
+                    </div>
+                    <Badge className="bg-red-600 text-white px-4 py-2 text-lg mb-4">69% de desconto</Badge>
+                    <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-4">
+                      <p className="text-lg text-red-600 font-extrabold mb-2">
+                        ⚠️ VALOR SUBIU DE R$ 7,90 PARA R$ 14,90!
+                      </p>
+                      <p className="text-sm text-gray-600 mb-3">O preço subirá novamente em:</p>
+                      <CountdownTimer />
+                    </div>
+                  </div>
 
-                <FAQItem
-                  icon="📱"
-                  question="Como recebo o material?"
-                  answer="Após a confirmação do pagamento, você recebe automaticamente por email o link para download do e-book em PDF de alta qualidade. O material fica disponível para sempre em sua conta e você pode baixar quantas vezes quiser. Acesso imediato, sem espera!"
-                />
+                  
 
-                <FAQItem
-                  icon="🛒"
-                  question="Onde encontro os ingredientes?"
-                  answer="Todos os ingredientes são facilmente encontrados em supermercados comuns como Extra, Carrefour, Pão de Açúcar. Não precisa de nada especial ou importado. Incluímos uma lista completa de fornecedores e onde encontrar cada item pelo melhor preço no e-book."
-                />
-              </div>
-
-              {/* Right Column */}
-              <div className="space-y-4">
-                <FAQItem
-                  icon="⏰"
-                  question="Quanto tempo para dominar a receita?"
-                  answer="A maioria das nossas alunas consegue fazer perfeitamente já na primeira tentativa! O processo todo leva cerca de 30 minutos. Com a prática, você consegue fazer em 15 minutos. É uma receita simples, mas com resultado profissional."
-                />
-
-                <FAQItem
-                  icon="🔄"
-                  question="E se eu não gostar do produto?"
-                  answer="Oferecemos garantia incondicional de 7 dias. Se por qualquer motivo não ficar satisfeita, devolvemos 100% do seu investimento, sem perguntas ou burocracias. Basta enviar um email e processamos o reembolso em até 24 horas. Risco zero para você!"
-                />
-
-                <FAQItem
-                  icon="📞"
-                  question="Terei suporte se precisar de ajuda?"
-                  answer="Sim! Oferecemos suporte prioritário via WhatsApp para todas as nossas alunas. Nossa equipe especializada está pronta para tirar suas dúvidas sobre a receita, técnicas e até dicas de vendas. Você nunca estará sozinha nessa jornada!"
-                />
-
-                <FAQItem
-                  icon="🎁"
-                  question="Tem algum bônus incluso?"
-                  answer="Sim! Além do tutorial completo, você ganha um super brinde surpresa: um guia exclusivo com 10 variações da receita (morango com chocolate branco, com coco, com amendoim e muito mais) que vai multiplicar suas opções de venda!"
-                />
-              </div>
-            </div>
-
-            {/* CTA at bottom of FAQ */}
-            <div className="text-center mt-16">
-              <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-2xl p-8 border border-red-100">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Ainda tem dúvidas?</h3>
-                <p className="text-gray-600 mb-6">Nossa equipe está pronta para ajudar você!</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button
-                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
-                    onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
-                  >
-                    💬 Falar no WhatsApp
-                  </Button>
-                  <span className="text-gray-500 text-sm">ou</span>
-                  <Button
-                    className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
+                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-6 text-xl rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 mb-4"
                     onClick={() => window.open("https://pay.kiwify.com.br/CI9Z3I6", "_blank")}
                   >
-                    🍓 Comprar Agora
+                    🏆 QUERO APRENDER AGORA! 🏆
                   </Button>
+
+                  <p className="text-sm text-gray-500">⏰ Oferta válida apenas hoje! Restam apenas 23 vagas.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* FAQ Section - Now as last section */}
+          <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute top-20 left-10 w-32 h-32 bg-red-100 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute bottom-20 right-10 w-40 h-40 bg-pink-100 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-orange-50 rounded-full opacity-30 blur-2xl"></div>
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+              {/* Header Section */}
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
                 </div>
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                  Dúvidas Frequentes
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  Esclarecemos as principais dúvidas sobre o tutorial do Morango do Amor para que você possa tomar a
+                  melhor decisão
+                </p>
+                <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mt-6 rounded-full"></div>
+              </div>
+
+              {/* FAQ Grid */}
+              <div className="max-w-5xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-6">
+                  {/* Left Column */}
+                  <div className="space-y-4">
+                    <FAQItem
+                      icon="🍓"
+                      question="É realmente fácil de fazer?"
+                      answer="Sim! O tutorial foi desenvolvido especialmente para iniciantes. Com ingredientes simples que você encontra em qualquer supermercado e um passo a passo detalhado com fotos, qualquer pessoa consegue fazer em casa, mesmo sem experiência na cozinha. Nossas alunas conseguem fazer na primeira tentativa!"
+                    />
+
+                    <FAQItem
+                      icon="💰"
+                      question="Quanto posso ganhar vendendo?"
+                      answer="O lucro varia conforme sua dedicação e região. Nossas alunas relatam ganhos de R$ 400 a R$ 3.000 por mês. Cada morango do amor pode ser vendido entre R$ 3,00 a R$ 8,00, com custo de produção muito baixo (cerca de R$ 0,80 por unidade). Com dedicação, é possível ter uma renda extra significativa!"
+                    />
+
+                    <FAQItem
+                      icon="📱"
+                      question="Como recebo o material?"
+                      answer="Após a confirmação do pagamento, você recebe automaticamente por email o link para download do e-book em PDF de alta qualidade. O material fica disponível para sempre em sua conta e você pode baixar quantas vezes quiser. Acesso imediato, sem espera!"
+                    />
+
+                    <FAQItem
+                      icon="🛒"
+                      question="Onde encontro os ingredientes?"
+                      answer="Todos os ingredientes são facilmente encontrados em supermercados comuns como Extra, Carrefour, Pão de Açúcar. Não precisa de nada especial ou importado. Incluímos uma lista completa de fornecedores e onde encontrar cada item pelo melhor preço no e-book."
+                    />
+                  </div>
+
+                  {/* Right Column */}
+                  <div className="space-y-4">
+                    <FAQItem
+                      icon="⏰"
+                      question="Quanto tempo para dominar a receita?"
+                      answer="A maioria das nossas alunas consegue fazer perfeitamente já na primeira tentativa! O processo todo leva cerca de 30 minutos. Com a prática, você consegue fazer em 15 minutos. É uma receita simples, mas com resultado profissional."
+                    />
+
+                    <FAQItem
+                      icon="🔄"
+                      question="E se eu não gostar do produto?"
+                      answer="Oferecemos garantia incondicional de 7 dias. Se por qualquer motivo não ficar satisfeita, devolvemos 100% do seu investimento, sem perguntas ou burocracias. Basta enviar um email e processamos o reembolso em até 24 horas. Risco zero para você!"
+                    />
+
+                    <FAQItem
+                      icon="📞"
+                      question="Terei suporte se precisar de ajuda?"
+                      answer="Sim! Oferecemos suporte prioritário via WhatsApp para todas as nossas alunas. Nossa equipe especializada está pronta para tirar suas dúvidas sobre a receita, técnicas e até dicas de vendas. Você nunca estará sozinha nessa jornada!"
+                    />
+
+                    <FAQItem
+                      icon="🎁"
+                      question="Tem algum bônus incluso?"
+                      answer="Sim! Além do tutorial completo, você ganha um super brinde surpresa: um guia exclusivo com 10 variações da receita (morango com chocolate branco, com coco, com amendoim e muito mais) que vai multiplicar suas opções de venda!"
+                    />
+                  </div>
+                </div>
+
+                {/* CTA at bottom of FAQ */}
+                <div className="text-center mt-16"></div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">© 2024 Morango do Amor Perfeito. Todos os direitos reservados.</p>
+        <div className="container mx-auto px-4 text-center flex flex-col items-center gap-4">
+          <Image
+            src="/images/chocolicias-da-fabi-logo.png"
+            alt="Logo Chocolícias da Fabi"
+            width={80}
+            height={80}
+            className="rounded-full bg-white/10 p-2"
+          />
+          <div>
+            <p className="text-lg font-semibold text-pink-300">Chocolícias da Fabi</p>
+            <p className="text-sm">© 2024 Morango do Amor Perfeito. Todos os direitos reservados.</p>
+          </div>
         </div>
       </footer>
     </div>
